@@ -107,6 +107,23 @@
             ],
             "scripts": []
           }
+        },
+        "storybook": {
+          "builder": "@storybook/angular:start-storybook",
+          "options": {
+            "configDir": ".storybook",
+            "browserTarget": "ControlsLibraryAngular:build",
+            "compodoc": false
+          }
+        },
+        "build-storybook": {
+          "builder": "@storybook/angular:build-storybook",
+          "options": {
+            "configDir": ".storybook",
+            "browserTarget": "ControlsLibraryAngular:build",
+            "compodoc": false,
+            "outputDir": "storybook-static"
+          }
         }
       }
     },

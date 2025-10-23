@@ -1,69 +1,29 @@
-@import '../../styles/mixins';
-
 .ctrl-form-field {
-  @include ctrl-form-field;
-}
-
-.ctrl-input {
-  @include ctrl-input-base;
+  width: 100%;
+  
+  .mat-mdc-form-field {
+    width: 100%;
+  }
   
   // Size variants
   &--sm {
-    padding: var(--spacing-xs) var(--spacing-sm);
-    font-size: var(--typography-fontSize-sm);
-    min-height: 32px;
-  }
-  
-  &--md {
-    padding: var(--spacing-sm) var(--spacing-md);
-    font-size: var(--typography-fontSize-md);
-    min-height: 40px;
-  }
-  
-  &--lg {
-    padding: var(--spacing-md) var(--spacing-lg);
-    font-size: var(--typography-fontSize-lg);
-    min-height: 48px;
-  }
-  
-  // States
-  &--error {
-    border-color: var(--ctrl-theme-error);
-    
-    &:focus {
-      border-color: var(--ctrl-theme-error);
-      box-shadow: 0 0 0 3px rgba(244, 67, 54, 0.1);
+    .mat-mdc-form-field-infix {
+      padding: 4px 0;
+      font-size: 12px;
     }
   }
   
-  &--disabled {
-    background-color: var(--color-neutral-100);
-    color: var(--color-neutral-500);
-    cursor: not-allowed;
+  &--md {
+    .mat-mdc-form-field-infix {
+      padding: 8px 0;
+      font-size: 14px;
+    }
   }
-}
-
-.ctrl-label {
-  font-size: var(--typography-fontSize-sm);
-  font-weight: var(--typography-fontWeight-medium);
-  color: var(--color-neutral-700);
-  margin-bottom: var(--spacing-xs);
-  display: block;
-}
-
-.ctrl-required {
-  color: var(--ctrl-theme-error);
-  margin-left: 2px;
-}
-
-.ctrl-hint {
-  font-size: var(--typography-fontSize-xs);
-  color: var(--color-neutral-500);
-  margin-top: var(--spacing-xs);
-}
-
-.ctrl-error {
-  font-size: var(--typography-fontSize-xs);
-  color: var(--ctrl-theme-error);
-  margin-top: var(--spacing-xs);
+  
+  &--lg {
+    .mat-mdc-form-field-infix {
+      padding: 12px 0;
+      font-size: 16px;
+    }
+  }
 }

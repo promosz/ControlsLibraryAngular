@@ -51,7 +51,7 @@ function generateTypeScript(tokens) {
   const flattened = flattenObject(tokens);
   const tsContent = 'export const tokens = {\n' +
     Object.entries(flattened)
-      .map(([key, value]) => `  ${key}: '${value}',`)
+      .map(([key, value]) => `  '${key}': ${JSON.stringify(value)},`)
       .join('\n') +
     '\n} as const;\n\nexport type TokenKey = keyof typeof tokens;';
   

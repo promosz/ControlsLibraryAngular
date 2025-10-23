@@ -1,81 +1,56 @@
-@import '../../styles/mixins';
-
 .ctrl-button {
-  @include ctrl-button-base;
-  @include ctrl-button-size(md);
-  @include ctrl-button-variant(primary);
-  
-  // Size variants
-  &--sm {
-    @include ctrl-button-size(sm);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+  outline: none;
+
+  &:hover {
+    opacity: 0.9;
   }
-  
-  &--md {
-    @include ctrl-button-size(md);
-  }
-  
-  &--lg {
-    @include ctrl-button-size(lg);
-  }
-  
-  // Variant styles
-  &--primary {
-    @include ctrl-button-variant(primary);
-  }
-  
-  &--secondary {
-    @include ctrl-button-variant(secondary);
-  }
-  
-  &--outline {
-    @include ctrl-button-variant(outline);
-  }
-  
-  &--text {
-    @include ctrl-button-variant(text);
-  }
-  
-  // States
-  &--disabled {
+
+  &:disabled {
     opacity: 0.6;
     cursor: not-allowed;
   }
-  
-  &--loading {
-    cursor: not-allowed;
-  }
-  
-  &--full-width {
-    width: 100%;
-  }
-  
-  // Content
-  &__content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: var(--spacing-xs);
-  }
-  
-  &__loading {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: var(--spacing-xs);
-  }
-  
-  &__spinner {
-    width: 16px;
-    height: 16px;
-    animation: spin 1s linear infinite;
-  }
-}
 
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
+  // Variants
+  &--primary {
+    background-color: #2196f3;
+    color: white;
   }
-  to {
-    transform: rotate(360deg);
+
+  &--secondary {
+    background-color: #f5f5f5;
+    color: #333;
+    border: 1px solid #ddd;
+  }
+
+  &--danger {
+    background-color: #f44336;
+    color: white;
+  }
+
+  // Sizes
+  &--sm {
+    padding: 4px 8px;
+    font-size: 12px;
+  }
+
+  &--lg {
+    padding: 12px 24px;
+    font-size: 16px;
+  }
+
+  &--block {
+    width: 100%;
   }
 }

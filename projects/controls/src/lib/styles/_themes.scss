@@ -1,83 +1,55 @@
-// Import design tokens
-@import 'tokens/_variables.scss';
-
 // Global theme variables
 :root {
-  // Import CSS variables
-  @import 'tokens/_css-variables.css';
-  
-  // Additional theme variables
-  --ctrl-theme-primary: var(--color-primary-500);
-  --ctrl-theme-secondary: var(--color-secondary-500);
-  --ctrl-theme-surface: var(--color-neutral-50);
-  --ctrl-theme-background: #ffffff;
-  --ctrl-theme-error: var(--color-error-500);
-  --ctrl-theme-warning: var(--color-warning-500);
-  --ctrl-theme-success: var(--color-success-500);
-  
-  // Typography
-  --ctrl-font-family: var(--typography-fontFamily-primary);
-  --ctrl-font-size-base: var(--typography-fontSize-md);
-  --ctrl-font-weight-normal: var(--typography-fontWeight-regular);
-  --ctrl-line-height-base: var(--typography-lineHeight-normal);
-  
+  // Primary colors
+  --color-primary-50: #e3f2fd;
+  --color-primary-100: #bbdefb;
+  --color-primary-200: #90caf9;
+  --color-primary-300: #64b5f6;
+  --color-primary-400: #42a5f5;
+  --color-primary-500: #2196f3;
+  --color-primary-600: #1e88e5;
+  --color-primary-700: #1976d2;
+  --color-primary-800: #1565c0;
+  --color-primary-900: #0d47a1;
+
   // Spacing
-  --ctrl-spacing-xs: var(--spacing-xs);
-  --ctrl-spacing-sm: var(--spacing-sm);
-  --ctrl-spacing-md: var(--spacing-md);
-  --ctrl-spacing-lg: var(--spacing-lg);
-  --ctrl-spacing-xl: var(--spacing-xl);
-  
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 48px;
+  --spacing-xxxl: 64px;
+
+  // Typography
+  --font-family-primary: 'Inter', 'Roboto', sans-serif;
+  --font-family-mono: 'JetBrains Mono', 'Consolas', monospace;
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-md: 16px;
+  --font-size-lg: 18px;
+  --font-size-xl: 20px;
+  --font-size-xxl: 24px;
+  --font-size-xxxl: 32px;
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+
   // Border radius
-  --ctrl-border-radius-sm: var(--borderRadius-sm);
-  --ctrl-border-radius-md: var(--borderRadius-md);
-  --ctrl-border-radius-lg: var(--borderRadius-lg);
-  
-  // Shadows
-  --ctrl-shadow-sm: var(--boxShadow-sm);
-  --ctrl-shadow-md: var(--boxShadow-md);
-  --ctrl-shadow-lg: var(--boxShadow-lg);
+  --border-radius-none: 0;
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+  --border-radius-full: 9999px;
+
+  // Box shadows
+  --box-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --box-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --box-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --box-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
-
-// Dark theme
-[data-theme="dark"] {
-  --ctrl-theme-background: var(--color-neutral-900);
-  --ctrl-theme-surface: var(--color-neutral-800);
-  --ctrl-text-primary: var(--color-neutral-100);
-  --ctrl-text-secondary: var(--color-neutral-300);
-}
-
-// Base styles
-* {
-  box-sizing: border-box;
-}
-
-body {
-  font-family: var(--ctrl-font-family);
-  font-size: var(--ctrl-font-size-base);
-  font-weight: var(--ctrl-font-weight-normal);
-  line-height: var(--ctrl-line-height-base);
-  color: var(--ctrl-text-primary, var(--color-neutral-900));
-  background-color: var(--ctrl-theme-background);
-  margin: 0;
-  padding: 0;
-}
-
-// Utility classes
-.ctrl-text-xs { font-size: var(--typography-fontSize-xs); }
-.ctrl-text-sm { font-size: var(--typography-fontSize-sm); }
-.ctrl-text-md { font-size: var(--typography-fontSize-md); }
-.ctrl-text-lg { font-size: var(--typography-fontSize-lg); }
-.ctrl-text-xl { font-size: var(--typography-fontSize-xl); }
-
-.ctrl-font-light { font-weight: var(--typography-fontWeight-light); }
-.ctrl-font-normal { font-weight: var(--typography-fontWeight-regular); }
-.ctrl-font-medium { font-weight: var(--typography-fontWeight-medium); }
-.ctrl-font-semibold { font-weight: var(--typography-fontWeight-semibold); }
-.ctrl-font-bold { font-weight: var(--typography-fontWeight-bold); }
-
-.ctrl-spacing-xs { margin: var(--spacing-xs); }
-.ctrl-spacing-sm { margin: var(--spacing-sm); }
-.ctrl-spacing-md { margin: var(--spacing-md); }
-.ctrl-spacing-lg { margin: var(--spacing-lg); }
-.ctrl-spacing-xl { margin: var(--spacing-xl); }
