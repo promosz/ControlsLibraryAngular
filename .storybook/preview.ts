@@ -1,11 +1,8 @@
 import type { Preview } from '@storybook/angular';
-import { setCompodocJson } from '@storybook/addon-docs/angular';
 
 // Import global styles
 import '../src/styles.scss';
-
-// Set up Compodoc for Angular documentation
-setCompodocJson({});
+import '../projects/controls/src/lib/styles/tokens/_css-variables.css';
 
 const preview: Preview = {
   parameters: {
