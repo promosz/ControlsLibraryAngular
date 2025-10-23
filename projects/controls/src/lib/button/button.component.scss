@@ -1,0 +1,81 @@
+@import '../../styles/mixins';
+
+.ctrl-button {
+  @include ctrl-button-base;
+  @include ctrl-button-size(md);
+  @include ctrl-button-variant(primary);
+  
+  // Size variants
+  &--sm {
+    @include ctrl-button-size(sm);
+  }
+  
+  &--md {
+    @include ctrl-button-size(md);
+  }
+  
+  &--lg {
+    @include ctrl-button-size(lg);
+  }
+  
+  // Variant styles
+  &--primary {
+    @include ctrl-button-variant(primary);
+  }
+  
+  &--secondary {
+    @include ctrl-button-variant(secondary);
+  }
+  
+  &--outline {
+    @include ctrl-button-variant(outline);
+  }
+  
+  &--text {
+    @include ctrl-button-variant(text);
+  }
+  
+  // States
+  &--disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  
+  &--loading {
+    cursor: not-allowed;
+  }
+  
+  &--full-width {
+    width: 100%;
+  }
+  
+  // Content
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xs);
+  }
+  
+  &__loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xs);
+  }
+  
+  &__spinner {
+    width: 16px;
+    height: 16px;
+    animation: spin 1s linear infinite;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

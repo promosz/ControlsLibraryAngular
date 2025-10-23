@@ -1,0 +1,83 @@
+// Import design tokens
+@import 'tokens/_variables.scss';
+
+// Global theme variables
+:root {
+  // Import CSS variables
+  @import 'tokens/_css-variables.css';
+  
+  // Additional theme variables
+  --ctrl-theme-primary: var(--color-primary-500);
+  --ctrl-theme-secondary: var(--color-secondary-500);
+  --ctrl-theme-surface: var(--color-neutral-50);
+  --ctrl-theme-background: #ffffff;
+  --ctrl-theme-error: var(--color-error-500);
+  --ctrl-theme-warning: var(--color-warning-500);
+  --ctrl-theme-success: var(--color-success-500);
+  
+  // Typography
+  --ctrl-font-family: var(--typography-fontFamily-primary);
+  --ctrl-font-size-base: var(--typography-fontSize-md);
+  --ctrl-font-weight-normal: var(--typography-fontWeight-regular);
+  --ctrl-line-height-base: var(--typography-lineHeight-normal);
+  
+  // Spacing
+  --ctrl-spacing-xs: var(--spacing-xs);
+  --ctrl-spacing-sm: var(--spacing-sm);
+  --ctrl-spacing-md: var(--spacing-md);
+  --ctrl-spacing-lg: var(--spacing-lg);
+  --ctrl-spacing-xl: var(--spacing-xl);
+  
+  // Border radius
+  --ctrl-border-radius-sm: var(--borderRadius-sm);
+  --ctrl-border-radius-md: var(--borderRadius-md);
+  --ctrl-border-radius-lg: var(--borderRadius-lg);
+  
+  // Shadows
+  --ctrl-shadow-sm: var(--boxShadow-sm);
+  --ctrl-shadow-md: var(--boxShadow-md);
+  --ctrl-shadow-lg: var(--boxShadow-lg);
+}
+
+// Dark theme
+[data-theme="dark"] {
+  --ctrl-theme-background: var(--color-neutral-900);
+  --ctrl-theme-surface: var(--color-neutral-800);
+  --ctrl-text-primary: var(--color-neutral-100);
+  --ctrl-text-secondary: var(--color-neutral-300);
+}
+
+// Base styles
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--ctrl-font-family);
+  font-size: var(--ctrl-font-size-base);
+  font-weight: var(--ctrl-font-weight-normal);
+  line-height: var(--ctrl-line-height-base);
+  color: var(--ctrl-text-primary, var(--color-neutral-900));
+  background-color: var(--ctrl-theme-background);
+  margin: 0;
+  padding: 0;
+}
+
+// Utility classes
+.ctrl-text-xs { font-size: var(--typography-fontSize-xs); }
+.ctrl-text-sm { font-size: var(--typography-fontSize-sm); }
+.ctrl-text-md { font-size: var(--typography-fontSize-md); }
+.ctrl-text-lg { font-size: var(--typography-fontSize-lg); }
+.ctrl-text-xl { font-size: var(--typography-fontSize-xl); }
+
+.ctrl-font-light { font-weight: var(--typography-fontWeight-light); }
+.ctrl-font-normal { font-weight: var(--typography-fontWeight-regular); }
+.ctrl-font-medium { font-weight: var(--typography-fontWeight-medium); }
+.ctrl-font-semibold { font-weight: var(--typography-fontWeight-semibold); }
+.ctrl-font-bold { font-weight: var(--typography-fontWeight-bold); }
+
+.ctrl-spacing-xs { margin: var(--spacing-xs); }
+.ctrl-spacing-sm { margin: var(--spacing-sm); }
+.ctrl-spacing-md { margin: var(--spacing-md); }
+.ctrl-spacing-lg { margin: var(--spacing-lg); }
+.ctrl-spacing-xl { margin: var(--spacing-xl); }

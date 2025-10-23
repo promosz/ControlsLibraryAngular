@@ -1,0 +1,150 @@
+// Mixins for common component patterns
+
+@mixin ctrl-button-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: var(--ctrl-border-radius-md);
+  font-family: var(--ctrl-font-family);
+  font-weight: var(--ctrl-font-weight-medium);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  outline: none;
+  
+  &:focus-visible {
+    outline: 2px solid var(--ctrl-theme-primary);
+    outline-offset: 2px;
+  }
+  
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+@mixin ctrl-button-size($size: 'md') {
+  @if $size == 'sm' {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    font-size: var(--typography-fontSize-sm);
+    min-height: 32px;
+  } @else if $size == 'lg' {
+    padding: var(--spacing-md) var(--spacing-lg);
+    font-size: var(--typography-fontSize-lg);
+    min-height: 48px;
+  } @else {
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: var(--typography-fontSize-md);
+    min-height: 40px;
+  }
+}
+
+@mixin ctrl-button-variant($variant: 'primary') {
+  @if $variant == 'primary' {
+    background-color: var(--ctrl-theme-primary);
+    color: white;
+    
+    &:hover:not(:disabled) {
+      background-color: var(--color-primary-600);
+    }
+    
+    &:active:not(:disabled) {
+      background-color: var(--color-primary-700);
+    }
+  } @else if $variant == 'secondary' {
+    background-color: var(--ctrl-theme-secondary);
+    color: white;
+    
+    &:hover:not(:disabled) {
+      background-color: var(--color-secondary-600);
+    }
+    
+    &:active:not(:disabled) {
+      background-color: var(--color-secondary-700);
+    }
+  } @else if $variant == 'outline' {
+    background-color: transparent;
+    color: var(--ctrl-theme-primary);
+    border: 1px solid var(--ctrl-theme-primary);
+    
+    &:hover:not(:disabled) {
+      background-color: var(--ctrl-theme-primary);
+      color: white;
+    }
+  } @else if $variant == 'text' {
+    background-color: transparent;
+    color: var(--ctrl-theme-primary);
+    
+    &:hover:not(:disabled) {
+      background-color: var(--color-primary-50);
+    }
+  }
+}
+
+@mixin ctrl-input-base {
+  width: 100%;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 1px solid var(--color-neutral-300);
+  border-radius: var(--ctrl-border-radius-md);
+  font-family: var(--ctrl-font-family);
+  font-size: var(--ctrl-font-size-base);
+  background-color: white;
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  
+  &:focus {
+    outline: none;
+    border-color: var(--ctrl-theme-primary);
+    box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.1);
+  }
+  
+  &:disabled {
+    background-color: var(--color-neutral-100);
+    color: var(--color-neutral-500);
+    cursor: not-allowed;
+  }
+  
+  &::placeholder {
+    color: var(--color-neutral-400);
+  }
+}
+
+@mixin ctrl-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  
+  .ctrl-label {
+    font-size: var(--typography-fontSize-sm);
+    font-weight: var(--typography-fontWeight-medium);
+    color: var(--color-neutral-700);
+  }
+  
+  .ctrl-hint {
+    font-size: var(--typography-fontSize-xs);
+    color: var(--color-neutral-500);
+  }
+  
+  .ctrl-error {
+    font-size: var(--typography-fontSize-xs);
+    color: var(--ctrl-theme-error);
+  }
+}
+
+@mixin ctrl-card {
+  background-color: white;
+  border-radius: var(--ctrl-border-radius-lg);
+  box-shadow: var(--ctrl-shadow-sm);
+  padding: var(--spacing-lg);
+  border: 1px solid var(--color-neutral-200);
+}
+
+@mixin ctrl-elevation($level: 1) {
+  @if $level == 1 {
+    box-shadow: var(--ctrl-shadow-sm);
+  } @else if $level == 2 {
+    box-shadow: var(--ctrl-shadow-md);
+  } @else if $level == 3 {
+    box-shadow: var(--ctrl-shadow-lg);
+  }
+}

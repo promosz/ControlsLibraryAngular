@@ -1,0 +1,27 @@
+<div class="ctrl-form-field">
+  <label *ngIf="label" class="ctrl-label" [for]="inputId">
+    {{ label }}
+    <span *ngIf="required" class="ctrl-required">*</span>
+  </label>
+  
+  <input
+    [id]="inputId"
+    [type]="type"
+    [placeholder]="placeholder"
+    [disabled]="disabled"
+    [required]="required"
+    [value]="value"
+    [class]="inputClasses"
+    (input)="onInput($event)"
+    (focus)="onFocus($event)"
+    (blur)="onBlur($event)"
+  />
+  
+  <div *ngIf="hint && !hasError" class="ctrl-hint">
+    {{ hint }}
+  </div>
+  
+  <div *ngIf="hasError" class="ctrl-error">
+    {{ error }}
+  </div>
+</div>
