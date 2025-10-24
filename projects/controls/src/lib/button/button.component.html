@@ -1,20 +1,21 @@
 <button
-  [type]="type"
+  [mat-button]="variant === 'basic'"
+  [mat-raised-button]="variant === 'raised'"
+  [mat-stroked-button]="variant === 'stroked'"
+  [mat-flat-button]="variant === 'flat'"
+  [color]="color"
   [disabled]="disabled || loading"
+  [type]="type"
   [class]="buttonClasses"
-  (click)="onClick($event)"
->
+  (click)="onClick($event)">
+  
   <span class="ctrl-button__content" *ngIf="!loading">
     <ng-content></ng-content>
   </span>
   
   <span class="ctrl-button__loading" *ngIf="loading">
-    <svg class="ctrl-button__spinner" viewBox="0 0 24 24">
-      <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-dasharray="31.416" stroke-dashoffset="31.416">
-        <animate attributeName="stroke-dasharray" dur="2s" values="0 31.416;15.708 15.708;0 31.416" repeatCount="indefinite"/>
-        <animate attributeName="stroke-dashoffset" dur="2s" values="0;-15.708;-31.416" repeatCount="indefinite"/>
-      </circle>
-    </svg>
-    Loading...
+    <mat-spinner diameter="20"></mat-spinner>
+    <span class="ctrl-button__loading-text">Loading...</span>
   </span>
 </button>
+

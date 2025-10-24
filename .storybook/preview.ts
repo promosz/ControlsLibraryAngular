@@ -15,6 +15,23 @@ const cssVariables = `
   --color-primary-800: #1565c0;
   --color-primary-900: #0d47a1;
 
+  /* Secondary/Accent colors */
+  --color-secondary-50: #f3e5f5;
+  --color-secondary-100: #e1bee7;
+  --color-secondary-200: #ce93d8;
+  --color-secondary-300: #ba68c8;
+  --color-secondary-400: #ab47bc;
+  --color-secondary-500: #9c27b0;
+  --color-secondary-600: #8e24aa;
+  --color-secondary-700: #7b1fa2;
+  --color-secondary-800: #6a1b9a;
+  --color-secondary-900: #4a148c;
+
+  /* Error/Warn colors */
+  --color-error-50: #ffebee;
+  --color-error-500: #f44336;
+  --color-error-700: #d32f2f;
+
   /* Spacing */
   --spacing-xs: 4px;
   --spacing-sm: 8px;
@@ -55,6 +72,14 @@ const cssVariables = `
   --box-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   --box-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   --box-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+  /* Material Design Theme Variables */
+  --mdc-theme-primary: #2196f3;
+  --mdc-theme-on-primary: #ffffff;
+  --mdc-theme-secondary: #9c27b0;
+  --mdc-theme-on-secondary: #ffffff;
+  --mdc-theme-error: #f44336;
+  --mdc-theme-on-error: #ffffff;
 }
 `;
 

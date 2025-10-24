@@ -2,6 +2,8 @@ import type { Meta, StoryObj } from '@storybook/angular';
 import { ButtonComponent } from './button.component';
 import { moduleMetadata } from '@storybook/angular';
 import { FormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 const meta: Meta<ButtonComponent> = {
   title: 'Components/Button',
@@ -9,20 +11,25 @@ const meta: Meta<ButtonComponent> = {
   parameters: {
     docs: {
       description: {
-        component: 'Button is used to initiate actions on a page or form. Use buttons to allow users to take actions, make choices, with a single tap.'
+        component: 'Button component following Angular Material v19 design specification. Supports Basic, Raised, Stroked, and Flat variants with Primary, Accent, and Warn colors.'
       }
     }
   },
   argTypes: {
     variant: {
       control: { type: 'select' },
-      options: ['primary', 'secondary', 'outline', 'text'],
-      description: 'Visual style variant of the button'
+      options: ['basic', 'raised', 'stroked', 'flat'],
+      description: 'Material Design button variant'
+    },
+    color: {
+      control: { type: 'select' },
+      options: ['primary', 'accent', 'warn'],
+      description: 'Material Design color theme'
     },
     size: {
       control: { type: 'select' },
       options: ['sm', 'md', 'lg'],
-      description: 'Size of the button'
+      description: 'Button size'
     },
     disabled: {
       control: { type: 'boolean' },
@@ -44,7 +51,7 @@ const meta: Meta<ButtonComponent> = {
   },
   decorators: [
     moduleMetadata({
-      imports: [FormsModule]
+      imports: [FormsModule, MatButtonModule, MatProgressSpinnerModule]
     })
   ],
   tags: ['autodocs']
@@ -56,7 +63,8 @@ type Story = StoryObj<ButtonComponent>;
 // Default story
 export const Default: Story = {
   args: {
-    variant: 'primary',
+    variant: 'basic',
+    color: 'primary',
     size: 'md',
     disabled: false,
     loading: false,
@@ -64,19 +72,66 @@ export const Default: Story = {
   },
   render: (args) => ({
     props: args,
-    template: '<ctrl-button [variant]="variant" [size]="size" [disabled]="disabled" [loading]="loading" [fullWidth]="fullWidth" (clicked)="onClick($event)">Click me</ctrl-button>'
+    template: '<ctrl-button [variant]="variant" [color]="color" [size]="size" [disabled]="disabled" [loading]="loading" [fullWidth]="fullWidth" (clicked)="onClick($event)">Click me</ctrl-button>'
   })
 };
 
-// Variants
-export const Variants: Story = {
+// Material Design Variants
+export const MaterialVariants: Story = {
   render: () => ({
     template: `
-      <div style="display: flex; gap: 16px; flex-wrap: wrap;">
-        <ctrl-button variant="primary">Primary</ctrl-button>
-        <ctrl-button variant="secondary">Secondary</ctrl-button>
-        <ctrl-button variant="outline">Outline</ctrl-button>
-        <ctrl-button variant="text">Text</ctrl-button>
+      <div style="display: flex; gap: 16px; flex-wrap: wrap; align-items: center;">
+        <ctrl-button variant="basic" color="primary">Basic</ctrl-button>
+        <ctrl-button variant="raised" color="primary">Raised</ctrl-button>
+        <ctrl-button variant="stroked" color="primary">Stroked</ctrl-button>
+        <ctrl-button variant="flat" color="primary">Flat</ctrl-button>
+      </div>
+    `
+  })
+};
+
+// Material Design Colors
+export const MaterialColors: Story = {
+  render: () => ({
+    template: `
+      <div style="display: flex; gap: 16px; flex-wrap: wrap; align-items: center;">
+        <ctrl-button variant="raised" color="primary">Primary</ctrl-button>
+        <ctrl-button variant="raised" color="accent">Accent</ctrl-button>
+        <ctrl-button variant="raised" color="warn">Warn</ctrl-button>
+      </div>
+    `
+  })
+};
+
+// All Variants and Colors
+export const AllCombinations: Story = {
+  render: () => ({
+    template: `
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;">
+        <div style="text-align: center;">
+          <h4>Basic</h4>
+          <ctrl-button variant="basic" color="primary">Primary</ctrl-button>
+          <ctrl-button variant="basic" color="accent">Accent</ctrl-button>
+          <ctrl-button variant="basic" color="warn">Warn</ctrl-button>
+        </div>
+        <div style="text-align: center;">
+          <h4>Raised</h4>
+          <ctrl-button variant="raised" color="primary">Primary</ctrl-button>
+          <ctrl-button variant="raised" color="accent">Accent</ctrl-button>
+          <ctrl-button variant="raised" color="warn">Warn</ctrl-button>
+        </div>
+        <div style="text-align: center;">
+          <h4>Stroked</h4>
+          <ctrl-button variant="stroked" color="primary">Primary</ctrl-button>
+          <ctrl-button variant="stroked" color="accent">Accent</ctrl-button>
+          <ctrl-button variant="stroked" color="warn">Warn</ctrl-button>
+        </div>
+        <div style="text-align: center;">
+          <h4>Flat</h4>
+          <ctrl-button variant="flat" color="primary">Primary</ctrl-button>
+          <ctrl-button variant="flat" color="accent">Accent</ctrl-button>
+          <ctrl-button variant="flat" color="warn">Warn</ctrl-button>
+        </div>
       </div>
     `
   })
@@ -87,9 +142,9 @@ export const Sizes: Story = {
   render: () => ({
     template: `
       <div style="display: flex; gap: 16px; align-items: center;">
-        <ctrl-button size="sm">Small</ctrl-button>
-        <ctrl-button size="md">Medium</ctrl-button>
-        <ctrl-button size="lg">Large</ctrl-button>
+        <ctrl-button size="sm" variant="raised" color="primary">Small</ctrl-button>
+        <ctrl-button size="md" variant="raised" color="primary">Medium</ctrl-button>
+        <ctrl-button size="lg" variant="raised" color="primary">Large</ctrl-button>
       </div>
     `
   })
@@ -99,35 +154,11 @@ export const Sizes: Story = {
 export const States: Story = {
   render: () => ({
     template: `
-      <div style="display: flex; gap: 16px; flex-wrap: wrap;">
-        <ctrl-button>Default</ctrl-button>
-        <ctrl-button [disabled]="true">Disabled</ctrl-button>
-        <ctrl-button [loading]="true">Loading</ctrl-button>
-        <ctrl-button [fullWidth]="true">Full Width</ctrl-button>
-      </div>
-    `
-  })
-};
-
-// With Icons
-export const WithIcons: Story = {
-  render: () => ({
-    template: `
-      <div style="display: flex; gap: 16px; flex-wrap: wrap;">
-        <ctrl-button>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-          </svg>
-          Star
-        </ctrl-button>
-        <ctrl-button variant="outline">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-            <polyline points="7,10 12,15 17,10"/>
-            <line x1="12" y1="15" x2="12" y2="3"/>
-          </svg>
-          Download
-        </ctrl-button>
+      <div style="display: flex; gap: 16px; flex-wrap: wrap; align-items: center;">
+        <ctrl-button variant="raised" color="primary">Default</ctrl-button>
+        <ctrl-button variant="raised" color="primary" [disabled]="true">Disabled</ctrl-button>
+        <ctrl-button variant="raised" color="primary" [loading]="true">Loading</ctrl-button>
+        <ctrl-button variant="raised" color="primary" [fullWidth]="true">Full Width</ctrl-button>
       </div>
     `
   })
@@ -136,7 +167,8 @@ export const WithIcons: Story = {
 // Interactive Playground
 export const Playground: Story = {
   args: {
-    variant: 'primary',
+    variant: 'basic',
+    color: 'primary',
     size: 'md',
     disabled: false,
     loading: false,
@@ -155,6 +187,7 @@ export const Playground: Story = {
       <div style="padding: 20px;">
         <ctrl-button 
           [variant]="variant" 
+          [color]="color"
           [size]="size" 
           [disabled]="disabled" 
           [loading]="loading" 
@@ -167,3 +200,4 @@ export const Playground: Story = {
     `
   })
 };
+
