@@ -58,7 +58,7 @@
 // Custom Material theme colors using CSS variables
 .mat-mdc-button.mat-primary {
   --mdc-text-button-label-text-color: var(--color-primary-500);
-  background-color: var(--color-primary-50);
+  background-color: transparent;
 }
 
 .mat-mdc-raised-button.mat-primary {
@@ -67,8 +67,8 @@
 }
 
 .mat-mdc-stroked-button.mat-primary {
-  --mdc-outlined-button-outline-color: #8d6e63;
-  --mdc-outlined-button-label-text-color: #8d6e63;
+  --mdc-outlined-button-outline-color: var(--color-primary-500);
+  --mdc-outlined-button-label-text-color: var(--color-primary-500);
   background-color: var(--color-primary-50);
 }
 
@@ -80,7 +80,7 @@
 // Accent colors
 .mat-mdc-button.mat-accent {
   --mdc-text-button-label-text-color: var(--color-secondary-500);
-  background-color: var(--color-secondary-50);
+  background-color: transparent;
 }
 
 .mat-mdc-raised-button.mat-accent {
@@ -89,8 +89,8 @@
 }
 
 .mat-mdc-stroked-button.mat-accent {
-  --mdc-outlined-button-outline-color: #8d6e63;
-  --mdc-outlined-button-label-text-color: #8d6e63;
+  --mdc-outlined-button-outline-color: var(--color-secondary-500);
+  --mdc-outlined-button-label-text-color: var(--color-secondary-500);
   background-color: var(--color-secondary-50);
 }
 
@@ -102,7 +102,7 @@
 // Warn colors
 .mat-mdc-button.mat-warn {
   --mdc-text-button-label-text-color: var(--color-error-500);
-  background-color: var(--color-error-50);
+  background-color: transparent;
 }
 
 .mat-mdc-raised-button.mat-warn {
@@ -111,8 +111,8 @@
 }
 
 .mat-mdc-stroked-button.mat-warn {
-  --mdc-outlined-button-outline-color: #8d6e63;
-  --mdc-outlined-button-label-text-color: #8d6e63;
+  --mdc-outlined-button-outline-color: var(--color-error-500);
+  --mdc-outlined-button-label-text-color: var(--color-error-500);
   background-color: var(--color-error-50);
 }
 

@@ -19,7 +19,7 @@ const cssVariables = `
 }
 
 .mat-mdc-button {
-  background: #f5f5f5;
+  background: transparent;
   color: #6200ee;
 }
 
@@ -31,8 +31,8 @@ const cssVariables = `
 
 .mat-mdc-stroked-button {
   background: #f5f5f5;
-  color: #8d6e63;
-  border: 2px solid #8d6e63;
+  color: #6200ee;
+  border: 1px solid #6200ee;
 }
 
 .mat-mdc-flat-button {
@@ -40,8 +40,14 @@ const cssVariables = `
   color: #6200ee;
 }
 
-.mat-mdc-button:hover, .mat-mdc-raised-button:hover, .mat-mdc-stroked-button:hover, .mat-mdc-flat-button:hover {
-  opacity: 0.8;
+.mat-mdc-button:hover {
+  opacity: 0.85; /* dla Basic transparent buttons */
+}
+
+.mat-mdc-raised-button:hover, 
+.mat-mdc-stroked-button:hover, 
+.mat-mdc-flat-button:hover {
+  filter: brightness(95%);
 }
 
 .mat-mdc-button:disabled, .mat-mdc-raised-button:disabled, .mat-mdc-stroked-button:disabled, .mat-mdc-flat-button:disabled {
@@ -51,51 +57,51 @@ const cssVariables = `
 
 /* Primary color variants */
 .mat-mdc-button.mat-primary {
-  background: #e3f2fd;
-  color: #2196f3;
+  background: transparent;
+  color: #00796B;
 }
 
 .mat-mdc-raised-button.mat-primary {
-  background: #2196f3;
+  background: #00796B;
   color: white;
 }
 
 .mat-mdc-stroked-button.mat-primary {
-  background: #e3f2fd;
-  color: #8d6e63;
-  border-color: #8d6e63;
+  background: #E0F2F1;
+  color: #00796B;
+  border-color: #00796B;
 }
 
 .mat-mdc-flat-button.mat-primary {
-  background: #e3f2fd;
-  color: #2196f3;
+  background: #E0F2F1;
+  color: #00796B;
 }
 
 /* Accent color variants */
 .mat-mdc-button.mat-accent {
-  background: #f3e5f5;
-  color: #9c27b0;
+  background: transparent;
+  color: #2196F3;
 }
 
 .mat-mdc-raised-button.mat-accent {
-  background: #9c27b0;
+  background: #2196F3;
   color: white;
 }
 
 .mat-mdc-stroked-button.mat-accent {
-  background: #f3e5f5;
-  color: #8d6e63;
-  border-color: #8d6e63;
+  background: #E3F2FD;
+  color: #2196F3;
+  border-color: #2196F3;
 }
 
 .mat-mdc-flat-button.mat-accent {
-  background: #f3e5f5;
-  color: #9c27b0;
+  background: #E3F2FD;
+  color: #2196F3;
 }
 
 /* Warn color variants */
 .mat-mdc-button.mat-warn {
-  background: #ffebee;
+  background: transparent;
   color: #f44336;
 }
 
@@ -106,8 +112,8 @@ const cssVariables = `
 
 .mat-mdc-stroked-button.mat-warn {
   background: #ffebee;
-  color: #8d6e63;
-  border-color: #8d6e63;
+  color: #f44336;
+  border-color: #f44336;
 }
 
 .mat-mdc-flat-button.mat-warn {
@@ -116,29 +122,29 @@ const cssVariables = `
 }
 
 :root {
-  /* Primary colors */
-  --color-primary-50: #e3f2fd;
-  --color-primary-100: #bbdefb;
-  --color-primary-200: #90caf9;
-  --color-primary-300: #64b5f6;
-  --color-primary-400: #42a5f5;
-  --color-primary-500: #2196f3;
-  --color-primary-600: #1e88e5;
-  --color-primary-700: #1976d2;
-  --color-primary-800: #1565c0;
-  --color-primary-900: #0d47a1;
+  /* Primary colors (Teal) */
+  --color-primary-50: #E0F2F1;
+  --color-primary-100: #B2DFDB;
+  --color-primary-200: #80CBC4;
+  --color-primary-300: #4DB6AC;
+  --color-primary-400: #26A69A;
+  --color-primary-500: #00796B;
+  --color-primary-600: #00695C;
+  --color-primary-700: #004D40;
+  --color-primary-800: #003D32;
+  --color-primary-900: #002D24;
 
-  /* Secondary/Accent colors */
-  --color-secondary-50: #f3e5f5;
-  --color-secondary-100: #e1bee7;
-  --color-secondary-200: #ce93d8;
-  --color-secondary-300: #ba68c8;
-  --color-secondary-400: #ab47bc;
-  --color-secondary-500: #9c27b0;
-  --color-secondary-600: #8e24aa;
-  --color-secondary-700: #7b1fa2;
-  --color-secondary-800: #6a1b9a;
-  --color-secondary-900: #4a148c;
+  /* Secondary/Accent colors (Blue) */
+  --color-secondary-50: #E3F2FD;
+  --color-secondary-100: #BBDEFB;
+  --color-secondary-200: #90CAF9;
+  --color-secondary-300: #64B5F6;
+  --color-secondary-400: #42A5F5;
+  --color-secondary-500: #2196F3;
+  --color-secondary-600: #1E88E5;
+  --color-secondary-700: #1976D2;
+  --color-secondary-800: #1565C0;
+  --color-secondary-900: #0D47A1;
 
   /* Error/Warn colors */
   --color-error-50: #ffebee;
@@ -187,9 +193,9 @@ const cssVariables = `
   --box-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 
   /* Material Design Theme Variables */
-  --mdc-theme-primary: #2196f3;
+  --mdc-theme-primary: #00796B;
   --mdc-theme-on-primary: #ffffff;
-  --mdc-theme-secondary: #9c27b0;
+  --mdc-theme-secondary: #2196F3;
   --mdc-theme-on-secondary: #ffffff;
   --mdc-theme-error: #f44336;
   --mdc-theme-on-error: #ffffff;
