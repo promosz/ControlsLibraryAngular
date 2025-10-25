@@ -2,6 +2,110 @@ import type { Preview } from '@storybook/angular';
 
 // Add CSS variables directly
 const cssVariables = `
+/* Angular Material Base Styles */
+.mat-mdc-button, .mat-mdc-raised-button, .mat-mdc-stroked-button, .mat-mdc-flat-button {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.0892857143em;
+  text-transform: uppercase;
+  border-radius: 4px;
+  min-width: 64px;
+  padding: 0 16px;
+  height: 36px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mat-mdc-button {
+  background: transparent;
+  color: #6200ee;
+}
+
+.mat-mdc-raised-button {
+  background: #6200ee;
+  color: white;
+  box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12);
+}
+
+.mat-mdc-stroked-button {
+  background: transparent;
+  color: #6200ee;
+  border: 1px solid #6200ee;
+}
+
+.mat-mdc-flat-button {
+  background: transparent;
+  color: #6200ee;
+}
+
+.mat-mdc-button:hover, .mat-mdc-raised-button:hover, .mat-mdc-stroked-button:hover, .mat-mdc-flat-button:hover {
+  opacity: 0.8;
+}
+
+.mat-mdc-button:disabled, .mat-mdc-raised-button:disabled, .mat-mdc-stroked-button:disabled, .mat-mdc-flat-button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Primary color variants */
+.mat-mdc-button.mat-primary {
+  color: #2196f3;
+}
+
+.mat-mdc-raised-button.mat-primary {
+  background: #2196f3;
+  color: white;
+}
+
+.mat-mdc-stroked-button.mat-primary {
+  color: #2196f3;
+  border-color: #2196f3;
+}
+
+.mat-mdc-flat-button.mat-primary {
+  color: #2196f3;
+}
+
+/* Accent color variants */
+.mat-mdc-button.mat-accent {
+  color: #9c27b0;
+}
+
+.mat-mdc-raised-button.mat-accent {
+  background: #9c27b0;
+  color: white;
+}
+
+.mat-mdc-stroked-button.mat-accent {
+  color: #9c27b0;
+  border-color: #9c27b0;
+}
+
+.mat-mdc-flat-button.mat-accent {
+  color: #9c27b0;
+}
+
+/* Warn color variants */
+.mat-mdc-button.mat-warn {
+  color: #f44336;
+}
+
+.mat-mdc-raised-button.mat-warn {
+  background: #f44336;
+  color: white;
+}
+
+.mat-mdc-stroked-button.mat-warn {
+  color: #f44336;
+  border-color: #f44336;
+}
+
+.mat-mdc-flat-button.mat-warn {
+  color: #f44336;
+}
+
 :root {
   /* Primary colors */
   --color-primary-50: #e3f2fd;

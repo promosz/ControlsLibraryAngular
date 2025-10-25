@@ -4,6 +4,7 @@ import { moduleMetadata } from '@storybook/angular';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 const meta: Meta<ButtonComponent> = {
   title: 'Components/Button',
@@ -49,11 +50,11 @@ const meta: Meta<ButtonComponent> = {
       description: 'HTML button type'
     }
   },
-  decorators: [
-    moduleMetadata({
-      imports: [FormsModule, MatButtonModule, MatProgressSpinnerModule]
-    })
-  ],
+      decorators: [
+        moduleMetadata({
+          imports: [FormsModule, MatButtonModule, MatProgressSpinnerModule, NoopAnimationsModule]
+        })
+      ],
   tags: ['autodocs']
 };
 
