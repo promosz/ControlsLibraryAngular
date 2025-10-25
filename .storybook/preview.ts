@@ -19,7 +19,7 @@ const cssVariables = `
 }
 
 .mat-mdc-button {
-  background: transparent;
+  background: #f5f5f5;
   color: #6200ee;
 }
 
@@ -30,13 +30,13 @@ const cssVariables = `
 }
 
 .mat-mdc-stroked-button {
-  background: transparent;
-  color: #6200ee;
-  border: 1px solid #6200ee;
+  background: #f5f5f5;
+  color: #8d6e63;
+  border: 2px solid #8d6e63;
 }
 
 .mat-mdc-flat-button {
-  background: transparent;
+  background: #f5f5f5;
   color: #6200ee;
 }
 
@@ -51,6 +51,7 @@ const cssVariables = `
 
 /* Primary color variants */
 .mat-mdc-button.mat-primary {
+  background: #e3f2fd;
   color: #2196f3;
 }
 
@@ -60,16 +61,19 @@ const cssVariables = `
 }
 
 .mat-mdc-stroked-button.mat-primary {
-  color: #2196f3;
-  border-color: #2196f3;
+  background: #e3f2fd;
+  color: #8d6e63;
+  border-color: #8d6e63;
 }
 
 .mat-mdc-flat-button.mat-primary {
+  background: #e3f2fd;
   color: #2196f3;
 }
 
 /* Accent color variants */
 .mat-mdc-button.mat-accent {
+  background: #f3e5f5;
   color: #9c27b0;
 }
 
@@ -79,16 +83,19 @@ const cssVariables = `
 }
 
 .mat-mdc-stroked-button.mat-accent {
-  color: #9c27b0;
-  border-color: #9c27b0;
+  background: #f3e5f5;
+  color: #8d6e63;
+  border-color: #8d6e63;
 }
 
 .mat-mdc-flat-button.mat-accent {
+  background: #f3e5f5;
   color: #9c27b0;
 }
 
 /* Warn color variants */
 .mat-mdc-button.mat-warn {
+  background: #ffebee;
   color: #f44336;
 }
 
@@ -98,11 +105,13 @@ const cssVariables = `
 }
 
 .mat-mdc-stroked-button.mat-warn {
-  color: #f44336;
-  border-color: #f44336;
+  background: #ffebee;
+  color: #8d6e63;
+  border-color: #8d6e63;
 }
 
 .mat-mdc-flat-button.mat-warn {
+  background: #ffebee;
   color: #f44336;
 }
 
